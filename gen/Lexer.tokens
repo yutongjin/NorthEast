@@ -1,0 +1,27 @@
+INT=1
+FLOAT=2
+BEGIN=3
+END=4
+To=5
+NEXT=6
+REAL=7
+BOOLEAN=8
+NOTEQUAL=9
+AND=10
+OR=11
+POW=12
+ID=13
+WS=14
+'int'=1
+'float'=2
+'begin'=3
+'end'=4
+'to'=5
+'next'=6
+'real'=7
+'bool'=8
+'!='=9
+'&&'=10
+'||'=11
+'^'=12
+' '=14
