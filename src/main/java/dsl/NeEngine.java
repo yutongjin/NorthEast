@@ -1,5 +1,8 @@
 package dsl;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import groovy.json.JsonBuilder;
 import model.PrintStatement;
 import model.Statement;
 import org.antlr.v4.runtime.CharStreams;
@@ -9,6 +12,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.stringtemplate.v4.STGroup;
 import org.stringtemplate.v4.*;
+import utils.NeExecutor;
+
 /*...
         ST hello = new ST("Hello, <name>!");
         hello.add("name", "World");
@@ -27,8 +32,10 @@ public class NeEngine {
         // load relative directory of templates
         STGroup g = new STGroupDir("StringTemplate/java");
         String result = g.getInstanceOf("demo").add("st", statement).render();
+        GsonBuilder json = new GsonBuilder();
+        //json.add
         //System.out.println(result);
-        return result;
+        return NeExecutor.reflect(result).toString();
 
     }
 
